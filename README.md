@@ -62,11 +62,11 @@ RCWL-0516 Module Pinouts
 ![image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaLkAX9bEYmmzQJ6U9tdT4h9uMLzK-NJC_A7vRBBuJgKgBty2w0nyu7SZszmAnnzwqK8oVC8U_7P7vz7fex9_gjVkniV0m7_HP434PytuBTp1MUMCNQvBtNGKla3hp5IeAkfvztQ1jS6oL_FV8GOjPWzNowNoQmgjSNEaXRNrxNGhzlVs8-5VyXvbC0gg/w640-h360/13.png)
 
 The RCWL0516 module is a single breakout board with the following connections:
-3V3 : it is the "output" from the onboard 3.3V regulator which can be used to power external circuits. Remember, this is not an input pin. This pin can provide up to 100mA of current.
-GND : is the ground pin.
-OUT : is the 3.3V TTL logic output. This pin goes HIGH for 2seconds when a motion is detected and goes LOW when no motion is detected. The output of this module is "analog" and can be connected to an analog input of a microcontroller and sampled by an ADC. The output voltage is roughly proportional to the distance between the sensor and the object. 
-VIN : provides power to the module. Connect this pin to an input voltage anywhere between 4 to 28V (however, 5V is commonly used). This module consumes less than 3mA of current so, you can easily power this by the 5V output from an Arduino or a Raspberry Pi.
-CDS : pins are where you attach an optional LDR (light dependent resistor) allowing it to operate only in the dark.
+* 3V3 : it is the "output" from the onboard 3.3V regulator which can be used to power external circuits. Remember, this is not an input pin. This pin can provide up to 100mA of current.
+* GND : is the ground pin.
+* OUT : is the 3.3V TTL logic output. This pin goes HIGH for 2seconds when a motion is detected and goes LOW when no motion is detected. The output of this module is "analog" and can be connected to an analog input of a microcontroller and sampled by an ADC. The output voltage is roughly proportional to the distance between the sensor and the object. 
+* VIN : provides power to the module. Connect this pin to an input voltage anywhere between 4 to 28V (however, 5V is commonly used). This module consumes less than 3mA of current so, you can easily power this by the 5V output from an Arduino or a Raspberry Pi.
+****CDS : pins are where you attach an optional LDR (light dependent resistor) allowing it to operate only in the dark.
 
 	You can connect the LDR to the sensor in two ways:
 	* By using the two CDS pads on the top of the module.
@@ -103,9 +103,10 @@ Jumper Settings
 ![image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFBEhg4HIBT1AJq8RT-PlLgBsm24tXPQP9FPphb_RHAZ_FvxtZHPntS8RL7JazBkPfmngBFEafbTO7au73VKpqKbvj_OuyZ-8t4DBMvnVUT77Z0UZUKlk2BNcSfYZCuAnGOQIylmomSqo272RBnLVpH9OFlRHkkLLaRx1yn4m10bAFo3mLxxAajpgjdHM/w640-h360/18.png)
 
 The module has 3 jumper settings at the back of it. The sensors default settings can be altered, by populating these jumpers with appropriate resistors and capacitors:
-C-TM  : (Pulse length Adjustment) By installing a suitable SMD capacitor you can adjust the repeat trigger time by extending the output pulse length. Default trigger time is 2s. Increasing capacitor's capacity will make repeat trigger time longer. A 0.2µF capacitor extends the output pulse to 50s, while 1µF extends it to 250s.
-R-GN  : (Detection Range Adjustment) By installing a suitable resistor you can reduce the detection range. The default detection range is 7m. If you install a 1M resistor the distance reduces to 5m, while a 270K resistor reduces it to 1.5m.
-R-CDS : (Light Sensitivity Adjustment) You can use this as an alternative to soldering the LDR. Any resistor between 47K – 100K will suffice. The lower the value, the brighter the light must be in order to disable the trigger.
+
+* C-TM  : (Pulse length Adjustment) By installing a suitable SMD capacitor you can adjust the repeat trigger time by extending the output pulse length. Default trigger time is 2s. Increasing capacitor's capacity will make repeat trigger time longer. A 0.2µF capacitor extends the output pulse to 50s, while 1µF extends it to 250s.
+* R-GN  : (Detection Range Adjustment) By installing a suitable resistor you can reduce the detection range. The default detection range is 7m. If you install a 1M resistor the distance reduces to 5m, while a 270K resistor reduces it to 1.5m.
+* R-CDS : (Light Sensitivity Adjustment) You can use this as an alternative to soldering the LDR. Any resistor between 47K – 100K will suffice. The lower the value, the brighter the light must be in order to disable the trigger.
 
 
 Demo
